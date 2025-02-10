@@ -1,9 +1,9 @@
-import { Injectable, NotFoundException } from '@nestjs/common';
-import { InjectModel } from '@nestjs/mongoose';
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
-import { Product, ProductDocument } from './schemas/product.schema';
-import { Model } from 'mongoose';
+import { Injectable, NotFoundException } from "@nestjs/common";
+import { InjectModel } from "@nestjs/mongoose";
+import { CreateProductDto } from "./dto/create-product.dto";
+import { UpdateProductDto } from "./dto/update-product.dto";
+import { Product, ProductDocument } from "./schemas/product.schema";
+import { Model } from "mongoose";
 
 @Injectable()
 export class ProductsService {
@@ -19,7 +19,7 @@ export class ProductsService {
   async findAll() {
     const product = await this.productModel.find().exec();
     if (product.length === 0) {
-      return { message: 'Not have products' };
+      return { message: "Not have products" };
     }
     return product;
   }

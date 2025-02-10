@@ -12,15 +12,15 @@ async function bootstrap() {
         exceptionFactory: (errors) => {
             const messages = errors.map((error) => {
                 const constraintsMessages = error.constraints
-                    ? Object.values(error.constraints).join('. ')
-                    : 'Unknown error';
+                    ? Object.values(error.constraints).join(". ")
+                    : "Unknown error";
                 return {
                     field: error.property,
-                    message: constraintsMessages + '.',
+                    message: constraintsMessages + ".",
                 };
             });
             return new common_1.BadRequestException({
-                message: 'Validation failed',
+                message: "Validation failed",
                 errors: messages,
             });
         },

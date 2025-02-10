@@ -1,7 +1,7 @@
-import { CreateProductDto } from './dto/create-product.dto';
-import { UpdateProductDto } from './dto/update-product.dto';
-import { Product, ProductDocument } from './schemas/product.schema';
-import { Model } from 'mongoose';
+import { CreateProductDto } from "./dto/create-product.dto";
+import { UpdateProductDto } from "./dto/update-product.dto";
+import { Product, ProductDocument } from "./schemas/product.schema";
+import { Model } from "mongoose";
 export declare class ProductsService {
     private productModel;
     constructor(productModel: Model<ProductDocument>);
